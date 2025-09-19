@@ -1,0 +1,123 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="coinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2C3E50" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="600" fill="url(#grid)"/>
+  
+  <!-- Candlestick chart background -->
+  <rect x="100" y="100" width="800" height="300" fill="#2C3E50" opacity="0.8" rx="10"/>
+  
+  <!-- Candlestick bars -->
+  <g transform="translate(150, 200)">
+    <!-- Green (up) bars -->
+    <rect x="20" y="20" width="8" height="60" fill="#00FF00" opacity="0.8"/>
+    <rect x="60" y="10" width="8" height="80" fill="#00FF00" opacity="0.8"/>
+    <rect x="100" y="30" width="8" height="40" fill="#00FF00" opacity="0.8"/>
+    <rect x="140" y="5" width="8" height="90" fill="#00FF00" opacity="0.8"/>
+    <rect x="180" y="25" width="8" height="50" fill="#00FF00" opacity="0.8"/>
+    <rect x="220" y="15" width="8" height="70" fill="#00FF00" opacity="0.8"/>
+    <rect x="260" y="35" width="8" height="30" fill="#00FF00" opacity="0.8"/>
+    <rect x="300" y="20" width="8" height="60" fill="#00FF00" opacity="0.8"/>
+    <rect x="340" y="10" width="8" height="80" fill="#00FF00" opacity="0.8"/>
+    <rect x="380" y="25" width="8" height="50" fill="#00FF00" opacity="0.8"/>
+    <rect x="420" y="15" width="8" height="70" fill="#00FF00" opacity="0.8"/>
+    <rect x="460" y="30" width="8" height="40" fill="#00FF00" opacity="0.8"/>
+    <rect x="500" y="5" width="8" height="90" fill="#00FF00" opacity="0.8"/>
+    <rect x="540" y="20" width="8" height="60" fill="#00FF00" opacity="0.8"/>
+    <rect x="580" y="10" width="8" height="80" fill="#00FF00" opacity="0.8"/>
+    <rect x="620" y="25" width="8" height="50" fill="#00FF00" opacity="0.8"/>
+    <rect x="660" y="15" width="8" height="70" fill="#00FF00" opacity="0.8"/>
+    
+    <!-- Red (down) bars -->
+    <rect x="40" y="50" width="8" height="40" fill="#FF0000" opacity="0.8"/>
+    <rect x="80" y="60" width="8" height="20" fill="#FF0000" opacity="0.8"/>
+    <rect x="120" y="70" width="8" height="10" fill="#FF0000" opacity="0.8"/>
+    <rect x="160" y="55" width="8" height="30" fill="#FF0000" opacity="0.8"/>
+    <rect x="200" y="65" width="8" height="15" fill="#FF0000" opacity="0.8"/>
+    <rect x="240" y="60" width="8" height="20" fill="#FF0000" opacity="0.8"/>
+    <rect x="280" y="50" width="8" height="40" fill="#FF0000" opacity="0.8"/>
+    <rect x="320" y="60" width="8" height="20" fill="#FF0000" opacity="0.8"/>
+    <rect x="360" y="55" width="8" height="30" fill="#FF0000" opacity="0.8"/>
+    <rect x="400" y="65" width="8" height="15" fill="#FF0000" opacity="0.8"/>
+    <rect x="440" y="60" width="8" height="20" fill="#FF0000" opacity="0.8"/>
+    <rect x="480" y="50" width="8" height="40" fill="#FF0000" opacity="0.8"/>
+    <rect x="520" y="60" width="8" height="20" fill="#FF0000" opacity="0.8"/>
+    <rect x="560" y="55" width="8" height="30" fill="#FF0000" opacity="0.8"/>
+    <rect x="600" y="65" width="8" height="15" fill="#FF0000" opacity="0.8"/>
+    <rect x="640" y="60" width="8" height="20" fill="#FF0000" opacity="0.8"/>
+  </g>
+  
+  <!-- Line graph -->
+  <path d="M 150 250 Q 200 200 250 180 Q 300 160 350 140 Q 400 120 450 100 Q 500 80 550 90 Q 600 100 650 80 Q 700 60 750 70 Q 800 80 850 60 Q 900 40 950 50" 
+        stroke="#00BFFF" stroke-width="3" fill="none"/>
+  
+  <!-- Coin stacks -->
+  <g transform="translate(50, 450)">
+    <!-- Stack 1 -->
+    <circle cx="0" cy="0" r="20" fill="url(#coinGradient)"/>
+    <circle cx="0" cy="-15" r="20" fill="url(#coinGradient)"/>
+    <circle cx="0" cy="-30" r="20" fill="url(#coinGradient)"/>
+    <circle cx="0" cy="-45" r="20" fill="url(#coinGradient)"/>
+    
+    <!-- Stack 2 -->
+    <circle cx="80" cy="0" r="25" fill="url(#coinGradient)"/>
+    <circle cx="80" cy="-18" r="25" fill="url(#coinGradient)"/>
+    <circle cx="80" cy="-36" r="25" fill="url(#coinGradient)"/>
+    <circle cx="80" cy="-54" r="25" fill="url(#coinGradient)"/>
+    <circle cx="80" cy="-72" r="25" fill="url(#coinGradient)"/>
+    
+    <!-- Stack 3 -->
+    <circle cx="160" cy="0" r="30" fill="url(#coinGradient)"/>
+    <circle cx="160" cy="-22" r="30" fill="url(#coinGradient)"/>
+    <circle cx="160" cy="-44" r="30" fill="url(#coinGradient)"/>
+    <circle cx="160" cy="-66" r="30" fill="url(#coinGradient)"/>
+    <circle cx="160" cy="-88" r="30" fill="url(#coinGradient)"/>
+    <circle cx="160" cy="-110" r="30" fill="url(#coinGradient)"/>
+    
+    <!-- Stack 4 -->
+    <circle cx="240" cy="0" r="35" fill="url(#coinGradient)"/>
+    <circle cx="240" cy="-26" r="35" fill="url(#coinGradient)"/>
+    <circle cx="240" cy="-52" r="35" fill="url(#coinGradient)"/>
+    <circle cx="240" cy="-78" r="35" fill="url(#coinGradient)"/>
+    <circle cx="240" cy="-104" r="35" fill="url(#coinGradient)"/>
+    <circle cx="240" cy="-130" r="35" fill="url(#coinGradient)"/>
+    <circle cx="240" cy="-156" r="35" fill="url(#coinGradient)"/>
+  </g>
+  
+  <!-- Project title overlay -->
+  <rect x="50" y="50" width="400" height="60" fill="#2C3E50" opacity="0.9" rx="10"/>
+  <text x="250" y="90" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Currency Detector</text>
+  
+  <!-- Tech icons -->
+  <g transform="translate(1000, 100)">
+    <circle cx="0" cy="0" r="25" fill="#FFD700" opacity="0.8"/>
+    <text x="0" y="5" text-anchor="middle" fill="white" font-family="Arial" font-size="20">💰</text>
+  </g>
+  
+  <g transform="translate(1100, 200)">
+    <circle cx="0" cy="0" r="25" fill="#00FF00" opacity="0.8"/>
+    <text x="0" y="5" text-anchor="middle" fill="white" font-family="Arial" font-size="20">🤖</text>
+  </g>
+  
+  <!-- Glow effects -->
+  <circle cx="200" cy="400" r="50" fill="#FFD700" opacity="0.1"/>
+  <circle cx="400" cy="350" r="60" fill="#FFD700" opacity="0.1"/>
+  <circle cx="600" cy="300" r="70" fill="#FFD700" opacity="0.1"/>
+</svg>

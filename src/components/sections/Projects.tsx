@@ -67,7 +67,7 @@ const Projects = () => {
         'Offline-first architecture',
         'AI-powered resource matching'
       ],
-      banner: '/projects/banners/ai-refugee-aid-banner.jpg'
+      banner: '/projects/banners/ai-refugee-aid-banner.svg'
     },
     {
       title: 'Agro Products Stock Management System',
@@ -97,7 +97,7 @@ const Projects = () => {
         'Database design and ORM',
         'User authentication system'
       ],
-      banner: '/projects/banners/agro-management-banner.jpg'
+      banner: '/projects/banners/agro-management-banner.svg'
     },
     {
       title: 'Fake Currency Detector',
@@ -127,7 +127,7 @@ const Projects = () => {
         'Custom dataset creation',
         'High-accuracy CNN model'
       ],
-      banner: '/projects/banners/currency-detector-banner.jpg'
+      banner: '/projects/banners/currency-detector-banner.svg'
     },
     {
       title: 'Medicine Recommender',
@@ -157,7 +157,7 @@ const Projects = () => {
         'NLP and recommendation systems',
         'Streamlit web interface'
       ],
-      banner: '/projects/banners/medicine-recommender-banner.jpg'
+      banner: '/projects/banners/medicine-recommender-banner.svg'
     }
   ]
 
