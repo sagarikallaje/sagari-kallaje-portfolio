@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "verify-image": "node verify-image.js",
-    "setup": "node setup-profile.js"
+    "setup": "node setup-profile.js",
+    "upload-profile": "node upload-profile.js"
   },
   "dependencies": {
     "next": "14.0.4",

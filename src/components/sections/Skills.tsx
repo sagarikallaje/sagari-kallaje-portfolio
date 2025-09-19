@@ -8,15 +8,14 @@ import {
   Wrench, 
   Users, 
   Brain,
-  Python,
-  C,
-  Javascript,
-  Html,
-  Css,
-  Git,
-  Figma,
   BarChart3,
-  Cpu
+  Cpu,
+  FileText,
+  Globe,
+  Terminal,
+  GitBranch,
+  Image,
+  Layers
 } from 'lucide-react'
 
 const Skills = () => {
@@ -48,11 +47,11 @@ const Skills = () => {
       title: 'Programming Languages',
       icon: Code,
       skills: [
-        { name: 'Python', level: 90, icon: Python, color: 'from-yellow-500 to-orange-500' },
-        { name: 'JavaScript', level: 85, icon: Javascript, color: 'from-yellow-400 to-yellow-600' },
-        { name: 'C', level: 80, icon: C, color: 'from-blue-500 to-blue-700' },
-        { name: 'HTML', level: 95, icon: Html, color: 'from-orange-500 to-red-500' },
-        { name: 'CSS', level: 90, icon: Css, color: 'from-blue-400 to-blue-600' },
+        { name: 'Python', level: 90, icon: Terminal, color: 'from-yellow-500 to-orange-500' },
+        { name: 'JavaScript', level: 85, icon: Code, color: 'from-yellow-400 to-yellow-600' },
+        { name: 'C', level: 80, icon: Terminal, color: 'from-blue-500 to-blue-700' },
+        { name: 'HTML', level: 95, icon: FileText, color: 'from-orange-500 to-red-500' },
+        { name: 'CSS', level: 90, icon: Layers, color: 'from-blue-400 to-blue-600' },
         { name: 'SQL (MySQL)', level: 85, icon: Database, color: 'from-blue-600 to-blue-800' },
       ]
     },
@@ -60,7 +59,7 @@ const Skills = () => {
       title: 'UI/UX Design',
       icon: Palette,
       skills: [
-        { name: 'Figma', level: 85, icon: Figma, color: 'from-purple-500 to-pink-500' },
+        { name: 'Figma', level: 85, icon: Image, color: 'from-purple-500 to-pink-500' },
         { name: 'Wireframes', level: 80, icon: Palette, color: 'from-indigo-500 to-purple-500' },
         { name: 'Prototypes', level: 75, icon: Palette, color: 'from-pink-500 to-rose-500' },
         { name: 'User-Centered Design', level: 85, icon: Users, color: 'from-green-500 to-teal-500' },
@@ -81,7 +80,7 @@ const Skills = () => {
       title: 'Tools & Technologies',
       icon: Wrench,
       skills: [
-        { name: 'Git/GitHub', level: 90, icon: Git, color: 'from-gray-700 to-gray-900' },
+        { name: 'Git/GitHub', level: 90, icon: GitBranch, color: 'from-gray-700 to-gray-900' },
         { name: 'VS Code', level: 95, icon: Code, color: 'from-blue-500 to-blue-700' },
         { name: 'Agile Methodologies', level: 70, icon: Users, color: 'from-green-500 to-emerald-500' },
         { name: 'Jupyter Notebook', level: 85, icon: Code, color: 'from-orange-500 to-yellow-500' },

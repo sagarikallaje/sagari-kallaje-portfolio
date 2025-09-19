@@ -29,34 +29,34 @@ const About = () => {
 
   const interests = [
     {
-      icon: Code,
-      title: 'Web Development',
-      description: 'Building modern, responsive web applications with React, Next.js, and TypeScript',
-    },
-    {
-      icon: Brain,
-      title: 'AI & Machine Learning',
-      description: 'Exploring AI applications, neural networks, and data science solutions',
+      icon: BookOpen,
+      title: 'Reading & Learning',
+      description: 'Passionate about reading tech blogs, books, psychology, business aspects, philosophy, and staying updated with industry trends',
     },
     {
       icon: Palette,
-      title: 'UI/UX Design',
-      description: 'Creating user-centered designs with Figma and design thinking principles',
+      title: 'Creative Projects & Open Source',
+      description: 'Working on personal creative projects, contributing to open source communities, and developing designing and editing abilities',
     },
     {
-      icon: Users,
-      title: 'Collaboration',
-      description: 'Working effectively in cross-functional teams and leading projects',
+      icon: Brain,
+      title: 'Exploring New Advancements',
+      description: 'Always curious about emerging technologies and latest trends in the tech world',
     },
     {
       icon: Award,
-      title: 'Continuous Learning',
-      description: 'Always eager to learn new technologies and adapt to industry trends',
+      title: 'Art & Craft',
+      description: 'Love sketching, painting, and various art forms as creative outlets',
     },
     {
-      icon: BookOpen,
-      title: 'Problem Solving',
-      description: 'Analytical thinking and innovative approaches to complex challenges',
+      icon: Users,
+      title: 'Entertainment & Music',
+      description: 'Enjoy binge watching shows and listening to music for relaxation',
+    },
+    {
+      icon: Code,
+      title: 'Outdoor Sports',
+      description: 'Chess and badminton are my favorite outdoor activities and hobbies',
     },
   ]
 
@@ -143,30 +143,47 @@ const About = () => {
             </motion.div>
           </div>
 
-          {/* Education Highlights */}
+          {/* Key Skills Preview */}
           <motion.div
             variants={itemVariants}
             className="mt-16 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Educational Journey</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-600 mb-2">93.7%</div>
-                <div className="text-sm text-gray-600 font-medium">SSLC (CBSE)</div>
-                <div className="text-xs text-gray-500">K.V.G. International Public School</div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Professional & Technical Skills</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+              <div className="text-center p-4 bg-white rounded-xl shadow-sm">
+                <div className="text-lg font-bold text-primary-600 mb-2">Programming</div>
+                <div className="text-sm text-gray-600">Python, C, JavaScript, HTML, CSS, SQL (MySQL)</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-600 mb-2">90%</div>
-                <div className="text-sm text-gray-600 font-medium">12th Grade (KSEEB)</div>
-                <div className="text-xs text-gray-500">Expert Pre-University College</div>
+              <div className="text-center p-4 bg-white rounded-xl shadow-sm">
+                <div className="text-lg font-bold text-primary-600 mb-2">UI/UX Design</div>
+                <div className="text-sm text-gray-600">Figma, wireframes, prototypes, user-centered design</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-600 mb-2">8.1 CGPA</div>
-                <div className="text-sm text-gray-600 font-medium">B.E. CSE (Ongoing)</div>
-                <div className="text-xs text-gray-500">Dr. Ambedkar Institute of Technology</div>
+              <div className="text-center p-4 bg-white rounded-xl shadow-sm">
+                <div className="text-lg font-bold text-primary-600 mb-2">Data & Analytics</div>
+                <div className="text-sm text-gray-600">Power BI, basic machine learning (NumPy, Pandas, scikit-learn)</div>
+              </div>
+              <div className="text-center p-4 bg-white rounded-xl shadow-sm">
+                <div className="text-lg font-bold text-primary-600 mb-2">Tools & Methods</div>
+                <div className="text-sm text-gray-600">Git/GitHub, VS Code, Agile basics</div>
               </div>
             </div>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                'Python', 'C', 'JavaScript', 'HTML', 'CSS', 'SQL (MySQL)',
+                'Figma', 'Wireframes', 'Prototypes', 'User-centered Design',
+                'Power BI', 'NumPy', 'Pandas', 'Scikit-learn', 'Machine Learning',
+                'Git/GitHub', 'VS Code', 'Agile', 'Data Analysis'
+              ].map((skill, index) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 bg-white text-primary-700 text-sm font-medium rounded-full shadow-sm"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </motion.div>
+
         </motion.div>
       </div>
     </section>

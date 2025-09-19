@@ -9,7 +9,6 @@ import {
   Send, 
   Github, 
   Linkedin, 
-  MessageCircle,
   CheckCircle,
   AlertCircle,
   MessageSquare
@@ -213,20 +212,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Quick Response Promise */}
-              <motion.div
-                variants={itemVariants}
-                className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6"
-              >
-                <div className="flex items-center space-x-3 mb-3">
-                  <MessageCircle size={24} className="text-primary-600" />
-                  <h4 className="font-semibold text-gray-900">Quick Response</h4>
-                </div>
-                <p className="text-sm text-gray-600">
-                  I typically respond to messages within 24 hours. For urgent matters, 
-                  feel free to call or text me directly.
-                </p>
-              </motion.div>
             </motion.div>
 
             {/* Contact Form */}

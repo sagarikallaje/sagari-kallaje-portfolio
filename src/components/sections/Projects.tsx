@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ExternalLink, Github, Calendar, Code, Database, Brain, Smartphone, Globe, Eye, ChevronRight, Star, Zap, Users, Award, X } from 'lucide-react'
 import Image from 'next/image'
+import { ExternalLink, Github, Calendar, Code, Database, Brain, Smartphone, Globe, Eye, ChevronRight, Star, Zap, Users, Award, X } from 'lucide-react'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null)
@@ -45,7 +45,6 @@ const Projects = () => {
       status: 'Ongoing',
       description: 'Developed an AI-powered cross-platform mobile app to connect refugees with food, shelter, and healthcare resources. Integrated a multilingual AI chatbot for real-time assistance using natural-language processing and translation APIs.',
       longDescription: 'This comprehensive mobile application addresses the critical needs of refugee communities by providing real-time access to essential resources. The app features secure authentication, offline data storage, and a responsive UI designed for reliable use in low-connectivity areas.',
-      image: '/projects/refugee-aid.jpg',
       technologies: ['React Native', 'AI/ML', 'NLP', 'Translation APIs', 'Offline Storage'],
       features: [
         'Multilingual AI chatbot for real-time assistance',
@@ -60,7 +59,6 @@ const Projects = () => {
       filterCategory: 'mobile',
       icon: Smartphone,
       color: 'from-blue-500 to-purple-600',
-      impact: 'High',
       complexity: 'Advanced',
       duration: '6 months',
       teamSize: 'Solo',
@@ -68,14 +66,14 @@ const Projects = () => {
         'Real-time multilingual support',
         'Offline-first architecture',
         'AI-powered resource matching'
-      ]
+      ],
+      banner: '/projects/banners/ai-refugee-aid-banner.jpg'
     },
     {
       title: 'Agro Products Stock Management System',
       status: 'Completed',
       description: 'Developed a comprehensive web application for farmers to record and monitor crop and field data. Implemented a modular Flask backend with SQLAlchemy ORM and secure user authentication.',
       longDescription: 'A full-stack web application designed to help farmers efficiently manage their agricultural operations. The system provides data visualization, reporting capabilities, and user-friendly interfaces for tracking crop yields, field conditions, and inventory management.',
-      image: '/projects/agro-management.jpg',
       technologies: ['Flask', 'SQLAlchemy', 'HTML', 'CSS', 'JavaScript', 'MySQL'],
       features: [
         'Modular Flask backend architecture',
@@ -91,7 +89,6 @@ const Projects = () => {
       filterCategory: 'web',
       icon: Globe,
       color: 'from-green-500 to-teal-600',
-      impact: 'Medium',
       complexity: 'Intermediate',
       duration: '3 months',
       teamSize: 'Solo',
@@ -99,14 +96,14 @@ const Projects = () => {
         'Full-stack web development',
         'Database design and ORM',
         'User authentication system'
-      ]
+      ],
+      banner: '/projects/banners/agro-management-banner.jpg'
     },
     {
       title: 'Fake Currency Detector',
       status: 'Completed',
       description: 'Built a custom dataset of genuine and counterfeit ₹500/₹2000 notes and pre-processed images with OpenCV. Trained a Convolutional Neural Network (CNN) to classify currency authenticity with high accuracy.',
       longDescription: 'An AI-powered solution for detecting counterfeit currency using computer vision and deep learning. The project involved extensive data collection, image preprocessing, model training, and user interface development for practical deployment.',
-      image: '/projects/currency-detector.jpg',
       technologies: ['Python', 'OpenCV', 'TensorFlow', 'CNN', 'Tkinter', 'Jupyter'],
       features: [
         'Custom dataset of genuine and counterfeit notes',
@@ -122,7 +119,6 @@ const Projects = () => {
       filterCategory: 'ai',
       icon: Brain,
       color: 'from-orange-500 to-red-600',
-      impact: 'High',
       complexity: 'Advanced',
       duration: '4 months',
       teamSize: 'Solo',
@@ -130,14 +126,14 @@ const Projects = () => {
         'Computer vision and deep learning',
         'Custom dataset creation',
         'High-accuracy CNN model'
-      ]
+      ],
+      banner: '/projects/banners/currency-detector-banner.jpg'
     },
     {
       title: 'Medicine Recommender',
       status: 'Completed',
       description: 'Built an end-to-end recommendation system leveraging Python, Pandas, and Scikit-learn for data processing and machine learning. Utilized Streamlit for rapid web application development and NLTK for natural language processing.',
       longDescription: 'A comprehensive recommendation system that helps users find appropriate medications based on symptoms and medical history. The system uses advanced NLP techniques and machine learning algorithms to provide accurate and personalized recommendations.',
-      image: '/projects/medicine-recommender.jpg',
       technologies: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit', 'NLTK', 'Pickle'],
       features: [
         'End-to-end recommendation pipeline',
@@ -153,7 +149,6 @@ const Projects = () => {
       filterCategory: 'ai',
       icon: Database,
       color: 'from-purple-500 to-pink-600',
-      impact: 'Medium',
       complexity: 'Intermediate',
       duration: '2 months',
       teamSize: 'Solo',
@@ -161,7 +156,8 @@ const Projects = () => {
         'Machine learning pipeline',
         'NLP and recommendation systems',
         'Streamlit web interface'
-      ]
+      ],
+      banner: '/projects/banners/medicine-recommender-banner.jpg'
     }
   ]
 
@@ -176,13 +172,28 @@ const Projects = () => {
       onClick={() => setSelectedProject(selectedProject === index ? null : index)}
       whileHover={{ y: -8, scale: 1.02 }}
     >
-      {/* Project Image with Overlay */}
-      <div className="relative h-56 overflow-hidden">
+      {/* Project Banner */}
+      <div className="relative h-48 overflow-hidden">
         <Image
-          src={project.image}
-          alt={project.title}
+          src={project.banner}
+          alt={`${project.title} banner`}
           fill
-          className="object-cover group-hover:scale-110 transition-transform duration-500"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          onError={(e) => {
+            // Fallback to gradient background if image fails to load
+            e.currentTarget.style.display = 'none';
+            const parent = e.currentTarget.parentElement;
+            if (parent) {
+              parent.innerHTML = `
+                <div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-700 flex items-center justify-center">
+                  <div class="text-white text-center">
+                    <div class="text-4xl mb-2">${project.icon ? '📱' : '💻'}</div>
+                    <div class="text-sm font-medium">${project.title}</div>
+                  </div>
+                </div>
+              `;
+            }
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
         
@@ -194,18 +205,6 @@ const Projects = () => {
           <span className="px-3 py-1 rounded-full text-xs font-medium text-white bg-black/60 backdrop-blur-sm">
             {project.category}
           </span>
-        </div>
-
-        {/* Impact and Complexity Indicators */}
-        <div className="absolute top-4 right-4 flex flex-col gap-2">
-          <div className="flex items-center space-x-1 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1">
-            <Zap size={12} className="text-yellow-500" />
-            <span className="text-xs font-medium text-gray-700">{project.impact}</span>
-          </div>
-          <div className="flex items-center space-x-1 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1">
-            <Star size={12} className="text-blue-500" />
-            <span className="text-xs font-medium text-gray-700">{project.complexity}</span>
-          </div>
         </div>
 
         {/* View Details Button */}
@@ -332,14 +331,8 @@ const Projects = () => {
             className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative">
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={800}
-                height={400}
-                className="w-full h-64 object-cover rounded-t-2xl"
-              />
+            <div className="relative bg-gradient-to-br from-primary-500 to-primary-700 h-32 rounded-t-2xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-t-2xl"></div>
               <button
                 onClick={onClose}
                 className="absolute top-4 right-4 p-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-700 hover:text-primary-600 transition-colors duration-200"
@@ -502,55 +495,7 @@ const Projects = () => {
           )}
 
           {/* Project Statistics */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8"
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Project Impact</h3>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600 mb-2">4+</div>
-                <div className="text-sm text-gray-600 font-medium">Major Projects</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600 mb-2">3</div>
-                <div className="text-sm text-gray-600 font-medium">Technologies</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600 mb-2">100%</div>
-                <div className="text-sm text-gray-600 font-medium">Open Source</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600 mb-2">1</div>
-                <div className="text-sm text-gray-600 font-medium">Ongoing Project</div>
-              </div>
-            </div>
-          </motion.div>
 
-          {/* Call to Action */}
-          <motion.div
-            variants={itemVariants}
-            className="text-center mt-16"
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Interested in My Work?</h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              I'm always excited to work on new projects and collaborate with like-minded individuals. 
-              Let's discuss how we can bring your ideas to life!
-            </p>
-            <motion.a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault()
-                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary inline-flex items-center space-x-2"
-            >
-              <span>Let's Work Together</span>
-              <ExternalLink size={20} />
-            </motion.a>
-          </motion.div>
         </motion.div>
       </div>
     </section>

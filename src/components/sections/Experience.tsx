@@ -15,7 +15,7 @@ import {
   BarChart3,
   Database,
   Cpu,
-  Python,
+  Terminal,
   Cloud
 } from 'lucide-react'
 
@@ -84,64 +84,52 @@ const Experience = () => {
       field: 'Computer Science & Engineering',
       institution: 'Dr. Ambedkar Institute of Technology',
       location: 'Bangalore, India',
-      duration: '2021 - 2025',
+      duration: '2022 - 2026',
       cgpa: '8.1',
-      status: 'Ongoing',
+      status: 'Currently Pursuing',
       icon: GraduationCap,
       color: 'from-purple-500 to-purple-700',
       highlights: [
-        'Strong foundation in computer science fundamentals',
-        'Active participation in tech clubs and events',
-        'Consistent academic performance',
-        'Hands-on project experience'
-      ]
-    },
-    {
-      degree: 'Senior Secondary (12th Grade)',
-      field: 'Science Stream',
-      institution: 'Expert Pre-University College',
-      location: 'Mangalore, India',
-      duration: '2019 - 2021',
-      percentage: '90%',
-      status: 'Completed',
-      icon: BookOpen,
-      color: 'from-orange-500 to-orange-700',
-      highlights: [
-        'Excellent performance in science subjects',
-        'Strong foundation in mathematics and physics',
-        'Active participation in extracurricular activities'
-      ]
-    },
-    {
-      degree: 'Secondary School (SSLC)',
-      field: 'General Studies',
-      institution: 'K.V.G. International Public School',
-      location: 'Sullia, India',
-      duration: '2017 - 2019',
-      percentage: '93.7%',
-      status: 'Completed',
-      icon: Award,
-      color: 'from-green-500 to-green-700',
-      highlights: [
-        'Outstanding academic performance',
-        'Strong foundation in core subjects',
-        'Active participation in school activities'
-      ]
+        'Strong foundation in computer science fundamentals including data structures, algorithms, and software engineering',
+        'Active participation in tech clubs, coding competitions, and technical workshops',
+        'Consistent academic performance with 8.1 CGPA across 6 semesters',
+        'Hands-on project experience in web development, AI/ML, and mobile app development',
+        'Collaborative learning through group projects and peer programming sessions'
+      ],
+      skillsSummary: 'Programming languages: C, Python, Java, JavaScript, HTML, CSS. Computer fundamentals: Data Structures, Algorithms, Computer Networks, Operating Systems, Database Management Systems.'
     }
   ]
 
   const certifications = [
     {
-      name: 'Microsoft-LinkedIn Data Analytics Certification',
-      issuer: 'Microsoft & LinkedIn',
+      name: 'NPTEL Data Structures and Algorithms',
+      issuer: 'NPTEL (IIT/IISc)',
+      icon: Code,
+      color: 'from-orange-500 to-orange-700'
+    },
+    {
+      name: 'Coursera Data Analytics Professional',
+      issuer: 'Coursera',
       icon: BarChart3,
       color: 'from-blue-500 to-blue-700'
+    },
+    {
+      name: 'UI/UX Web Design and Figma Mastery',
+      issuer: 'Udemy',
+      icon: Code,
+      color: 'from-purple-500 to-purple-700'
     },
     {
       name: 'IBM SkillsBuild: Prompt Engineering',
       issuer: 'IBM',
       icon: Brain,
       color: 'from-purple-500 to-purple-700'
+    },
+    {
+      name: 'Microsoft-LinkedIn Data Analytics Certification',
+      issuer: 'Microsoft & LinkedIn',
+      icon: BarChart3,
+      color: 'from-blue-500 to-blue-700'
     },
     {
       name: 'Data Analytics Job Simulation by Accenture',
@@ -160,20 +148,14 @@ const Experience = () => {
       issuer: 'Udemy',
       icon: Code,
       color: 'from-red-500 to-red-700'
-    },
-    {
-      name: '360 Days Python Bootcamp (Udemy)',
-      issuer: 'Udemy',
-      icon: Python,
-      color: 'from-yellow-500 to-yellow-700'
     }
   ]
 
   const extracurriculars = [
     {
-      title: 'Event Coordinator',
-      organization: 'Sanskruthi Intercollege Fest',
-      description: 'Organized and coordinated large-scale intercollege cultural and technical events',
+      title: 'Event Coordinator & Volunteer',
+      organization: 'Sanskruthi Intercollege Fest & Interrupt Branch Fest',
+      description: 'Organized and coordinated large-scale intercollege cultural and technical events, and volunteered for Interrupt Branch Fest contributing to event management and coordination',
       icon: Users,
       color: 'from-pink-500 to-pink-700'
     },
@@ -185,11 +167,18 @@ const Experience = () => {
       color: 'from-blue-500 to-blue-700'
     },
     {
-      title: 'Student Volunteer',
+      title: 'Student Representative',
       organization: 'GDG Cloud (Google Developer Group)',
       description: 'Participated in Google Developer Group activities and cloud technology workshops',
       icon: Cloud,
       color: 'from-green-500 to-green-700'
+    },
+    {
+      title: 'Technical Events Attendee',
+      organization: 'Various Tech Events & Conferences, Bangalore',
+      description: 'Regularly attended technical events, exhibitions, and conferences around Bangalore including tech meetups, startup events, and industry conferences to stay updated with latest technologies and network with professionals',
+      icon: Calendar,
+      color: 'from-purple-500 to-purple-700'
     }
   ]
 
@@ -255,6 +244,13 @@ const Experience = () => {
             <div className="text-2xl font-bold text-primary-600">{item.percentage}</div>
           </div>
         )}
+
+        {item.skillsSummary && (
+          <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+            <h4 className="text-sm font-semibold text-gray-900 mb-2">Skills Acquired</h4>
+            <p className="text-sm text-gray-700">{item.skillsSummary}</p>
+          </div>
+        )}
       </div>
     </motion.div>
   )
@@ -275,7 +271,7 @@ const Experience = () => {
               Experience & <span className="text-gradient">Education</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              My journey through internships, education, and continuous learning that has shaped my 
+              My journey through education, internships, and continuous learning that has shaped my 
               technical expertise and professional growth.
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full mt-6"></div>
@@ -298,7 +294,7 @@ const Experience = () => {
 
           {/* Education */}
           <motion.div variants={itemVariants} className="mb-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Educational Background</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Current Education</h3>
             <div className="space-y-8">
               {education.map((edu, index) => (
                 <TimelineItem 
