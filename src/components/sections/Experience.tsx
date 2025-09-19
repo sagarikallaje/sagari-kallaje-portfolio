@@ -176,7 +176,7 @@ const Experience = () => {
     {
       title: 'Technical Events Attendee',
       organization: 'Various Tech Events & Conferences, Bangalore',
-      description: 'Regularly attended technical events, exhibitions, and conferences around Bangalore including tech meetups, startup events, and industry conferences to stay updated with latest technologies and network with professionals',
+      description: 'Been a part of technical events in Bangalore like the Science Open Day IISc, Bangalore Tech Summit, Indian Blockchain Week Conference, and various tech meetups to stay updated with latest technologies and network with professionals',
       icon: Calendar,
       color: 'from-purple-500 to-purple-700'
     }

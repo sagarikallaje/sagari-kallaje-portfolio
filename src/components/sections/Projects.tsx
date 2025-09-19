@@ -60,8 +60,6 @@ const Projects = () => {
       icon: Smartphone,
       color: 'from-blue-500 to-purple-600',
       complexity: 'Advanced',
-      duration: '6 months',
-      teamSize: 'Solo',
       highlights: [
         'Real-time multilingual support',
         'Offline-first architecture',
@@ -90,8 +88,6 @@ const Projects = () => {
       icon: Globe,
       color: 'from-green-500 to-teal-600',
       complexity: 'Intermediate',
-      duration: '3 months',
-      teamSize: 'Solo',
       highlights: [
         'Full-stack web development',
         'Database design and ORM',
@@ -120,8 +116,6 @@ const Projects = () => {
       icon: Brain,
       color: 'from-orange-500 to-red-600',
       complexity: 'Advanced',
-      duration: '4 months',
-      teamSize: 'Solo',
       highlights: [
         'Computer vision and deep learning',
         'Custom dataset creation',
@@ -150,8 +144,6 @@ const Projects = () => {
       icon: Database,
       color: 'from-purple-500 to-pink-600',
       complexity: 'Intermediate',
-      duration: '2 months',
-      teamSize: 'Solo',
       highlights: [
         'Machine learning pipeline',
         'NLP and recommendation systems',
@@ -228,12 +220,8 @@ const Projects = () => {
             </h3>
             <div className="flex items-center space-x-4 text-sm text-gray-500">
               <div className="flex items-center space-x-1">
-                <Calendar size={14} />
-                <span>{project.duration}</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <Users size={14} />
-                <span>{project.teamSize}</span>
+                <Code size={14} />
+                <span>{project.complexity}</span>
               </div>
             </div>
           </div>
@@ -347,12 +335,8 @@ const Projects = () => {
                   <h2 className="text-3xl font-bold text-gray-900 mb-2">{project.title}</h2>
                   <div className="flex items-center space-x-4 text-gray-600">
                     <span className="flex items-center space-x-1">
-                      <Calendar size={16} />
-                      <span>{project.duration}</span>
-                    </span>
-                    <span className="flex items-center space-x-1">
-                      <Users size={16} />
-                      <span>{project.teamSize}</span>
+                      <Code size={16} />
+                      <span>{project.complexity}</span>
                     </span>
                     <span className={`px-3 py-1 rounded-full text-sm font-medium text-white bg-gradient-to-r ${project.color}`}>
                       {project.status}
