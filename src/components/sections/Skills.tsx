@@ -109,11 +109,11 @@ const Skills = () => {
           <div className={`p-2 rounded-lg bg-gradient-to-r ${skill.color}`}>
             <skill.icon size={16} className="text-white" />
           </div>
-          <span className="font-medium text-gray-900">{skill.name}</span>
+          <span className="font-medium text-gray-100">{skill.name}</span>
         </div>
-        <span className="text-sm text-gray-600 font-medium">{skill.level}%</span>
+        <span className="text-sm text-gray-300 font-medium">{skill.level}%</span>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-2">
+      <div className="w-full bg-gray-600 rounded-full h-2">
         <motion.div
           className={`h-2 rounded-full bg-gradient-to-r ${skill.color}`}
           initial={{ width: 0 }}
@@ -126,7 +126,7 @@ const Skills = () => {
   )
 
   return (
-    <section id="skills" className="section-padding bg-gray-50">
+    <section id="skills" className="section-padding bg-gray-800">
       <div className="container-custom">
         <motion.div
           variants={containerVariants}
@@ -137,10 +137,10 @@ const Skills = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-100 mb-6">
               My <span className="text-gradient">Skills</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               A comprehensive overview of my technical expertise, design capabilities, and soft skills 
               developed through academic projects, internships, and continuous learning.
             </p>
@@ -153,13 +153,13 @@ const Skills = () => {
               <motion.div
                 key={category.title}
                 variants={itemVariants}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-3 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg">
                     <category.icon size={24} className="text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-100">{category.title}</h3>
                 </div>
                 
                 <div className="space-y-4">
@@ -174,11 +174,11 @@ const Skills = () => {
           {/* Soft Skills */}
           <motion.div
             variants={itemVariants}
-            className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8"
+            className="bg-gradient-to-r from-gray-700 to-gray-600 rounded-2xl p-8"
           >
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Soft Skills</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-bold text-gray-100 mb-4">Soft Skills</h3>
+              <p className="text-gray-300">
                 Essential interpersonal and professional skills that complement my technical expertise
               </p>
             </div>
@@ -189,9 +189,9 @@ const Skills = () => {
                   key={skill}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="bg-white rounded-xl p-4 text-center shadow-md hover:shadow-lg transition-all duration-300"
+                  className="bg-gray-600 rounded-xl p-4 text-center shadow-md hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="text-sm font-medium text-gray-900">{skill}</div>
+                  <div className="text-sm font-medium text-gray-100">{skill}</div>
                 </motion.div>
               ))}
             </div>
@@ -202,7 +202,7 @@ const Skills = () => {
             variants={itemVariants}
             className="mt-16 text-center"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Certifications & Learning</h3>
+            <h3 className="text-2xl font-bold text-gray-100 mb-6">Certifications & Learning</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 'Microsoft-LinkedIn Data Analytics Certification',
@@ -216,9 +216,9 @@ const Skills = () => {
                   key={cert}
                   variants={itemVariants}
                   whileHover={{ scale: 1.02, y: -2 }}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-primary-500"
+                  className="bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-primary-500"
                 >
-                  <div className="text-sm font-medium text-gray-900 text-left">{cert}</div>
+                  <div className="text-sm font-medium text-gray-100 text-left">{cert}</div>
                 </motion.div>
               ))}
             </div>

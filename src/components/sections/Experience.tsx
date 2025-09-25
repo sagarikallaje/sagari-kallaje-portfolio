@@ -4,10 +4,6 @@ import { motion } from 'framer-motion'
 import { 
   Calendar, 
   MapPin, 
-  GraduationCap, 
-  Briefcase, 
-  Award, 
-  BookOpen,
   Building2,
   Code,
   Brain,
@@ -15,7 +11,6 @@ import {
   BarChart3,
   Database,
   Cpu,
-  Terminal,
   Cloud
 } from 'lucide-react'
 
@@ -78,46 +73,19 @@ const Experience = () => {
     }
   ]
 
-  const education = [
-    {
-      degree: 'Bachelor of Engineering (B.E.)',
-      field: 'Computer Science & Engineering',
-      institution: 'Dr. Ambedkar Institute of Technology',
-      location: 'Bangalore, India',
-      duration: '2022 - 2026',
-      cgpa: '8.1',
-      status: 'Currently Pursuing',
-      icon: GraduationCap,
-      color: 'from-purple-500 to-purple-700',
-      highlights: [
-        'Strong foundation in computer science fundamentals including data structures, algorithms, and software engineering',
-        'Active participation in tech clubs, coding competitions, and technical workshops',
-        'Consistent academic performance with 8.1 CGPA across 6 semesters',
-        'Hands-on project experience in web development, AI/ML, and mobile app development',
-        'Collaborative learning through group projects and peer programming sessions'
-      ],
-      skillsSummary: 'Programming languages: C, Python, Java, JavaScript, HTML, CSS. Computer fundamentals: Data Structures, Algorithms, Computer Networks, Operating Systems, Database Management Systems.'
-    }
-  ]
 
   const certifications = [
     {
       name: 'NPTEL Data Structures and Algorithms',
-      issuer: 'NPTEL (IIT/IISc)',
+      issuer: 'NPTEL (IIT Kanpur)',
       icon: Code,
       color: 'from-orange-500 to-orange-700'
     },
     {
-      name: 'Coursera Data Analytics Professional',
-      issuer: 'Coursera',
-      icon: BarChart3,
-      color: 'from-blue-500 to-blue-700'
-    },
-    {
-      name: 'UI/UX Web Design and Figma Mastery',
-      issuer: 'Udemy',
+      name: 'NPTEL Software Engineering',
+      issuer: 'NPTEL (IIT Madras)',
       icon: Code,
-      color: 'from-purple-500 to-purple-700'
+      color: 'from-indigo-500 to-indigo-700'
     },
     {
       name: 'IBM SkillsBuild: Prompt Engineering',
@@ -142,9 +110,30 @@ const Experience = () => {
       issuer: 'Infosys',
       icon: Cpu,
       color: 'from-orange-500 to-orange-700'
+    }
+  ]
+
+  const coursework = [
+    {
+      name: 'Python Programming',
+      issuer: 'Udemy',
+      icon: Code,
+      color: 'from-yellow-500 to-orange-700'
     },
     {
-      name: 'Complete Web Development (Udemy)',
+      name: 'Data Analytics Mastery',
+      issuer: 'Udemy',
+      icon: BarChart3,
+      color: 'from-green-500 to-teal-700'
+    },
+    {
+      name: 'UI/UX Google Professional',
+      issuer: 'Coursera',
+      icon: Code,
+      color: 'from-blue-500 to-blue-700'
+    },
+    {
+      name: 'Complete Web Development',
       issuer: 'Udemy',
       icon: Code,
       color: 'from-red-500 to-red-700'
@@ -198,32 +187,32 @@ const Experience = () => {
       </div>
 
       {/* Content */}
-      <div className="flex-1 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+      <div className="flex-1 bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-          <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+          <h3 className="text-xl font-bold text-gray-100">{item.title}</h3>
           <span className={`px-3 py-1 rounded-full text-xs font-medium text-white bg-gradient-to-r ${item.color} mt-2 sm:mt-0`}>
             {item.duration}
           </span>
         </div>
         
-        <div className="flex items-center space-x-2 text-gray-600 mb-2">
+        <div className="flex items-center space-x-2 text-gray-300 mb-2">
           <Building2 size={16} />
           <span className="font-medium">{item.company || item.institution}</span>
         </div>
         
-        <div className="flex items-center space-x-2 text-gray-600 mb-4">
+        <div className="flex items-center space-x-2 text-gray-300 mb-4">
           <MapPin size={16} />
           <span>{item.location}</span>
         </div>
 
-        <p className="text-gray-700 mb-4 leading-relaxed">
+        <p className="text-gray-300 mb-4 leading-relaxed">
           {item.description}
         </p>
 
         {item.highlights && (
           <ul className="space-y-2">
             {item.highlights.map((highlight: string, idx: number) => (
-              <li key={idx} className="flex items-start space-x-2 text-sm text-gray-600">
+              <li key={idx} className="flex items-start space-x-2 text-sm text-gray-300">
                 <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
                 <span>{highlight}</span>
               </li>
@@ -232,23 +221,23 @@ const Experience = () => {
         )}
 
         {item.cgpa && (
-          <div className="mt-4 p-3 bg-primary-50 rounded-lg">
-            <div className="text-sm text-gray-600">CGPA</div>
-            <div className="text-2xl font-bold text-primary-600">{item.cgpa}</div>
+          <div className="mt-4 p-3 bg-blue-900 rounded-lg">
+            <div className="text-sm text-gray-300">CGPA</div>
+            <div className="text-2xl font-bold text-blue-300">{item.cgpa}</div>
           </div>
         )}
 
         {item.percentage && (
-          <div className="mt-4 p-3 bg-primary-50 rounded-lg">
-            <div className="text-sm text-gray-600">Percentage</div>
-            <div className="text-2xl font-bold text-primary-600">{item.percentage}</div>
+          <div className="mt-4 p-3 bg-blue-900 rounded-lg">
+            <div className="text-sm text-gray-300">Percentage</div>
+            <div className="text-2xl font-bold text-blue-300">{item.percentage}</div>
           </div>
         )}
 
         {item.skillsSummary && (
-          <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-            <h4 className="text-sm font-semibold text-gray-900 mb-2">Skills Acquired</h4>
-            <p className="text-sm text-gray-700">{item.skillsSummary}</p>
+          <div className="mt-4 p-4 bg-gray-600 rounded-lg">
+            <h4 className="text-sm font-semibold text-gray-100 mb-2">Skills Acquired</h4>
+            <p className="text-sm text-gray-300">{item.skillsSummary}</p>
           </div>
         )}
       </div>
@@ -256,7 +245,7 @@ const Experience = () => {
   )
 
   return (
-    <section id="experience" className="section-padding bg-gray-50">
+    <section id="experience" className="section-padding bg-gray-800">
       <div className="container-custom">
         <motion.div
           variants={containerVariants}
@@ -267,11 +256,11 @@ const Experience = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Experience & <span className="text-gradient">Education</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-100 mb-6">
+              Experience & <span className="text-gradient">Learning</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              My journey through education, internships, and continuous learning that has shaped my 
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              My journey through internships, certifications, and continuous learning that has shaped my 
               technical expertise and professional growth.
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full mt-6"></div>
@@ -279,7 +268,6 @@ const Experience = () => {
 
           {/* Internships */}
           <motion.div variants={itemVariants} className="mb-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Professional Experience</h3>
             <div className="space-y-8">
               {internships.map((internship, index) => (
                 <TimelineItem 
@@ -292,39 +280,50 @@ const Experience = () => {
             </div>
           </motion.div>
 
-          {/* Education */}
-          <motion.div variants={itemVariants} className="mb-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Current Education</h3>
-            <div className="space-y-8">
-              {education.map((edu, index) => (
-                <TimelineItem 
-                  key={edu.degree} 
-                  item={edu} 
-                  index={index} 
-                  isLast={index === education.length - 1} 
-                />
-              ))}
-            </div>
-          </motion.div>
 
           {/* Certifications */}
           <motion.div variants={itemVariants} className="mb-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Certifications & Learning</h3>
+            <h3 className="text-2xl font-bold text-gray-100 mb-8 text-center">Certifications</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
                 <motion.div
                   key={cert.name}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <div className="flex items-start space-x-4">
                     <div className={`p-3 rounded-lg bg-gradient-to-r ${cert.color}`}>
                       <cert.icon size={24} className="text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 mb-2">{cert.name}</h4>
-                      <p className="text-sm text-gray-600">{cert.issuer}</p>
+                      <h4 className="font-semibold text-gray-100 mb-2">{cert.name}</h4>
+                      <p className="text-sm text-gray-300">{cert.issuer}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Coursework */}
+          <motion.div variants={itemVariants} className="mb-16">
+            <h3 className="text-2xl font-bold text-gray-100 mb-8 text-center">Coursework</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {coursework.map((course, index) => (
+                <motion.div
+                  key={course.name}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className={`p-3 rounded-lg bg-gradient-to-r ${course.color}`}>
+                      <course.icon size={24} className="text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-gray-100 mb-2">{course.name}</h4>
+                      <p className="text-sm text-gray-300">{course.issuer}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -334,21 +333,21 @@ const Experience = () => {
 
           {/* Extracurricular Activities */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Extracurricular Activities</h3>
+            <h3 className="text-2xl font-bold text-gray-100 mb-8 text-center">Extracurricular Activities</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {extracurriculars.map((activity, index) => (
                 <motion.div
                   key={activity.title}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                  className="bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
                 >
                   <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${activity.color} flex items-center justify-center`}>
                     <activity.icon size={32} className="text-white" />
                   </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">{activity.title}</h4>
-                  <p className="text-sm text-gray-600 mb-2">{activity.organization}</p>
-                  <p className="text-sm text-gray-500">{activity.description}</p>
+                  <h4 className="font-semibold text-gray-100 mb-2">{activity.title}</h4>
+                  <p className="text-sm text-gray-300 mb-2">{activity.organization}</p>
+                  <p className="text-sm text-gray-400">{activity.description}</p>
                 </motion.div>
               ))}
             </div>

@@ -1,0 +1,74 @@
+SAGARI P. KALLAJE
+Computer Science Engineering Student
+
+CONTACT INFORMATION
+Email: sagarikallaje5159@gmail.com
+Phone: +91 90360 95159
+Location: Bangalore, India
+LinkedIn: linkedin.com/in/sagarikallaje
+GitHub: github.com/sagarikallaje
+
+EDUCATION
+Bachelor of Technology in Computer Science Engineering
+[University Name] | [Year - Present]
+Relevant Coursework: Data Structures, Algorithms, Database Management, Web Development, Software Engineering
+
+TECHNICAL SKILLS
+Programming Languages: JavaScript, TypeScript, Python, Java, C++
+Web Technologies: React, Next.js, Node.js, HTML5, CSS3, Tailwind CSS
+Databases: MySQL, MongoDB, PostgreSQL
+Tools & Technologies: Git, GitHub, VS Code, Figma, Docker
+Frameworks: Express.js, React Native, Framer Motion
+
+PROJECTS
+1. AI Refugee Aid Platform
+   - Developed a comprehensive platform to help refugees with resources and support
+   - Technologies: React, Node.js, MongoDB
+   - Features: Resource mapping, community support, multilingual support
+
+2. Agro Management System
+   - Built a farm management system for crop monitoring and yield prediction
+   - Technologies: Python, Machine Learning, React
+   - Features: IoT integration, data analytics, mobile app
+
+3. Currency Detection App
+   - Created an AI-powered mobile app for currency recognition
+   - Technologies: React Native, TensorFlow, Python
+   - Features: Real-time detection, multi-currency support
+
+4. Medicine Recommender System
+   - Developed a recommendation system for pharmaceutical products
+   - Technologies: Python, Machine Learning, Flask
+   - Features: Personalized recommendations, drug interaction checking
+
+EXPERIENCE
+Software Development Intern
+[Company Name] | [Duration]
+- Developed and maintained web applications using React and Node.js
+- Collaborated with cross-functional teams to deliver high-quality software
+- Participated in code reviews and agile development processes
+
+CERTIFICATIONS
+- AWS Cloud Practitioner
+- Google Cloud Fundamentals
+- Microsoft Azure Fundamentals
+
+ACHIEVEMENTS
+- Dean's List for Academic Excellence
+- Winner of University Hackathon 2023
+- Active contributor to open-source projects
+
+LANGUAGES
+English (Fluent)
+Hindi (Native)
+Kannada (Native)
+
+INTERESTS
+- Artificial Intelligence and Machine Learning
+- Web Development and UI/UX Design
+- Open Source Contribution
+- Technology Innovation
+- Community Service
+
+---
+This is a placeholder resume. Please replace with your actual resume content and convert to PDF format.

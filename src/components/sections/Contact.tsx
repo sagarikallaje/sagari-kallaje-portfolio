@@ -11,7 +11,9 @@ import {
   Linkedin, 
   CheckCircle,
   AlertCircle,
-  MessageSquare
+  MessageSquare,
+  Download,
+  FileText
 } from 'lucide-react'
 
 const Contact = () => {
@@ -87,19 +89,11 @@ const Contact = () => {
     },
     {
       icon: Phone,
-      title: 'Phone',
+      title: 'Phone & WhatsApp',
       value: '+91 90360 95159',
       href: 'tel:+919036095159',
       color: 'from-green-500 to-green-700',
-      description: 'Call or text me directly'
-    },
-    {
-      icon: MessageSquare,
-      title: 'WhatsApp',
-      value: '+91 90360 95159',
-      href: 'https://wa.me/919036095159',
-      color: 'from-green-600 to-green-800',
-      description: 'Quick chat on WhatsApp'
+      description: 'Call, text, or WhatsApp me'
     },
     {
       icon: MapPin,
@@ -133,7 +127,7 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section id="contact" className="section-padding bg-gray-900">
       <div className="container-custom">
         <motion.div
           variants={containerVariants}
@@ -144,10 +138,10 @@ const Contact = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-100 mb-6">
               Get In <span className="text-gradient">Touch</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               I'm always excited to discuss new opportunities, collaborate on projects, 
               or simply have a conversation about technology and innovation.
             </p>
@@ -158,8 +152,8 @@ const Contact = () => {
             {/* Contact Information */}
             <motion.div variants={itemVariants} className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's Connect</h3>
-                <p className="text-gray-600 mb-8 leading-relaxed">
+                <h3 className="text-2xl font-bold text-gray-100 mb-6">Let's Connect</h3>
+                <p className="text-gray-300 mb-8 leading-relaxed">
                   Whether you have a project in mind, want to discuss opportunities, 
                   or just want to say hello, I'd love to hear from you. Feel free to 
                   reach out through any of the channels below.
@@ -176,52 +170,80 @@ const Contact = () => {
                     rel={info.title === 'WhatsApp' ? 'noopener noreferrer' : undefined}
                     variants={itemVariants}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all duration-300 group"
+                    className="flex items-center space-x-4 p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-all duration-300 group"
                   >
                     <div className={`p-3 rounded-lg bg-gradient-to-r ${info.color} group-hover:scale-110 transition-transform duration-300`}>
                       <info.icon size={24} className="text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
+                      <h4 className="font-semibold text-gray-100 group-hover:text-blue-400 transition-colors duration-200">
                         {info.title}
                       </h4>
-                      <p className="text-gray-600 text-sm">{info.value}</p>
-                      <p className="text-gray-500 text-xs">{info.description}</p>
+                      <p className="text-gray-300 text-sm">{info.value}</p>
+                      <p className="text-gray-400 text-xs">{info.description}</p>
                     </div>
                   </motion.a>
                 ))}
               </div>
 
-              {/* Social Links */}
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Follow Me</h4>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social) => (
-                    <motion.a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`p-3 rounded-full bg-gradient-to-r ${social.color} text-white hover:shadow-lg transition-all duration-300`}
-                    >
-                      <social.icon size={20} />
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
+              {/* Resume Download & LinkedIn Connect */}
+              <motion.div variants={itemVariants} className="mt-8 space-y-4">
+                <h4 className="text-lg font-semibold text-gray-100 mb-4">Quick Actions</h4>
+                
+                {/* Resume Download */}
+                <motion.a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex items-center space-x-4 p-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 group"
+                >
+                  <div className="p-3 rounded-lg bg-white/20 group-hover:scale-110 transition-transform duration-300">
+                    <FileText size={24} className="text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-white group-hover:text-indigo-200 transition-colors duration-200">
+                      Download Resume
+                    </h4>
+                    <p className="text-indigo-100 text-sm">Get my latest CV in PDF format</p>
+                  </div>
+                  <Download size={20} className="text-white group-hover:scale-110 transition-transform duration-300" />
+                </motion.a>
+
+                {/* LinkedIn Connect */}
+                <motion.a
+                  href="https://linkedin.com/in/sagarikallaje"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex items-center space-x-4 p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 group"
+                >
+                  <div className="p-3 rounded-lg bg-white/20 group-hover:scale-110 transition-transform duration-300">
+                    <Linkedin size={24} className="text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-white group-hover:text-blue-200 transition-colors duration-200">
+                      Connect on LinkedIn
+                    </h4>
+                    <p className="text-blue-100 text-sm">Let's connect and network professionally</p>
+                  </div>
+                  <Linkedin size={20} className="text-white group-hover:scale-110 transition-transform duration-300" />
+                </motion.a>
+              </motion.div>
+
 
             </motion.div>
 
             {/* Contact Form */}
-            <motion.div variants={itemVariants} className="bg-gray-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+            <motion.div variants={itemVariants} className="bg-gray-800 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-gray-100 mb-6">Send a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                       Name *
                     </label>
                     <input
@@ -231,13 +253,13 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-700 text-gray-100 placeholder-gray-400"
                       placeholder="Your name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                       Email *
                     </label>
                     <input
@@ -247,14 +269,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-700 text-gray-100 placeholder-gray-400"
                       placeholder="your.email@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
                     Subject *
                   </label>
                   <input
@@ -270,7 +292,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                     Message *
                   </label>
                   <textarea
@@ -280,7 +302,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none bg-gray-700 text-gray-100 placeholder-gray-400"
                     placeholder="Tell me about your project or just say hello..."
                   />
                 </div>
@@ -290,7 +312,7 @@ const Contact = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center space-x-2 text-green-600 bg-green-50 p-3 rounded-lg"
+                    className="flex items-center space-x-2 text-green-400 bg-green-900 p-3 rounded-lg"
                   >
                     <CheckCircle size={20} />
                     <span className="text-sm font-medium">Message sent successfully!</span>
@@ -301,7 +323,7 @@ const Contact = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center space-x-2 text-red-600 bg-red-50 p-3 rounded-lg"
+                    className="flex items-center space-x-2 text-red-400 bg-red-900 p-3 rounded-lg"
                   >
                     <AlertCircle size={20} />
                     <span className="text-sm font-medium">Failed to send message. Please try again.</span>
@@ -313,7 +335,7 @@ const Contact = () => {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium py-3 px-6 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium py-3 px-6 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -331,87 +353,6 @@ const Contact = () => {
             </motion.div>
           </div>
 
-          {/* Call to Action */}
-          <motion.div
-            variants={itemVariants}
-            className="text-center mt-16 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8"
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Work Together?</h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              I'm always excited to take on new challenges and collaborate on innovative projects. 
-              Let's discuss how we can bring your ideas to life! Choose your preferred way to get in touch.
-            </p>
-            
-            {/* Quick Contact Options */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-              <motion.a
-                href="mailto:sagarikallaje5159@gmail.com"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center space-x-2 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
-              >
-                <Mail size={20} className="text-blue-600 group-hover:scale-110 transition-transform duration-200" />
-                <span className="font-medium text-gray-700">Email Me</span>
-              </motion.a>
-              
-              <motion.a
-                href="https://wa.me/919036095159"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center space-x-2 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
-              >
-                <MessageSquare size={20} className="text-green-600 group-hover:scale-110 transition-transform duration-200" />
-                <span className="font-medium text-gray-700">WhatsApp</span>
-              </motion.a>
-              
-              <motion.a
-                href="tel:+919036095159"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center space-x-2 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
-              >
-                <Phone size={20} className="text-green-500 group-hover:scale-110 transition-transform duration-200" />
-                <span className="font-medium text-gray-700">Call Me</span>
-              </motion.a>
-              
-              <motion.a
-                href="https://github.com/sagarikallaje"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center space-x-2 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
-              >
-                <Github size={20} className="text-gray-700 group-hover:scale-110 transition-transform duration-200" />
-                <span className="font-medium text-gray-700">GitHub</span>
-              </motion.a>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                href="/resume.pdf"
-                download
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary inline-flex items-center space-x-2"
-              >
-                <span>Download Resume</span>
-              </motion.a>
-              <motion.a
-                href="https://linkedin.com/in/sagarikallaje"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-secondary inline-flex items-center space-x-2"
-              >
-                <Linkedin size={20} />
-                <span>Connect on LinkedIn</span>
-              </motion.a>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

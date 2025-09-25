@@ -3,11 +3,10 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { ExternalLink, Github, Calendar, Code, Database, Brain, Smartphone, Globe, Eye, ChevronRight, Star, Zap, Users, Award, X } from 'lucide-react'
+import { Github, Database, Brain, Smartphone, Globe, Eye, X } from 'lucide-react'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null)
-  const [filter, setFilter] = useState('all')
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,17 +31,10 @@ const Projects = () => {
     },
   }
 
-  const filterCategories = [
-    { id: 'all', label: 'All Projects', count: 4 },
-    { id: 'web', label: 'Web Apps', count: 1 },
-    { id: 'ai', label: 'AI/ML', count: 2 },
-    { id: 'mobile', label: 'Mobile', count: 1 },
-  ]
 
   const projects = [
     {
       title: 'AI Refugee Aid',
-      status: 'Ongoing',
       description: 'Developed an AI-powered cross-platform mobile app to connect refugees with food, shelter, and healthcare resources. Integrated a multilingual AI chatbot for real-time assistance using natural-language processing and translation APIs.',
       longDescription: 'This comprehensive mobile application addresses the critical needs of refugee communities by providing real-time access to essential resources. The app features secure authentication, offline data storage, and a responsive UI designed for reliable use in low-connectivity areas.',
       technologies: ['React Native', 'AI/ML', 'NLP', 'Translation APIs', 'Offline Storage'],
@@ -54,12 +46,9 @@ const Projects = () => {
         'Cross-platform compatibility'
       ],
       github: 'https://github.com/sagarikallaje/ai-refugee-aid',
-      demo: '#',
       category: 'Mobile App',
-      filterCategory: 'mobile',
       icon: Smartphone,
       color: 'from-blue-500 to-purple-600',
-      complexity: 'Advanced',
       highlights: [
         'Real-time multilingual support',
         'Offline-first architecture',
@@ -69,7 +58,6 @@ const Projects = () => {
     },
     {
       title: 'Agro Products Stock Management System',
-      status: 'Completed',
       description: 'Developed a comprehensive web application for farmers to record and monitor crop and field data. Implemented a modular Flask backend with SQLAlchemy ORM and secure user authentication.',
       longDescription: 'A full-stack web application designed to help farmers efficiently manage their agricultural operations. The system provides data visualization, reporting capabilities, and user-friendly interfaces for tracking crop yields, field conditions, and inventory management.',
       technologies: ['Flask', 'SQLAlchemy', 'HTML', 'CSS', 'JavaScript', 'MySQL'],
@@ -82,12 +70,9 @@ const Projects = () => {
         'Scalable and maintainable codebase'
       ],
       github: 'https://github.com/sagarikallaje/agro-management',
-      demo: '#',
       category: 'Web Application',
-      filterCategory: 'web',
       icon: Globe,
       color: 'from-green-500 to-teal-600',
-      complexity: 'Intermediate',
       highlights: [
         'Full-stack web development',
         'Database design and ORM',
@@ -97,7 +82,6 @@ const Projects = () => {
     },
     {
       title: 'Fake Currency Detector',
-      status: 'Completed',
       description: 'Built a custom dataset of genuine and counterfeit ₹500/₹2000 notes and pre-processed images with OpenCV. Trained a Convolutional Neural Network (CNN) to classify currency authenticity with high accuracy.',
       longDescription: 'An AI-powered solution for detecting counterfeit currency using computer vision and deep learning. The project involved extensive data collection, image preprocessing, model training, and user interface development for practical deployment.',
       technologies: ['Python', 'OpenCV', 'TensorFlow', 'CNN', 'Tkinter', 'Jupyter'],
@@ -110,12 +94,9 @@ const Projects = () => {
         'Real-time detection capabilities'
       ],
       github: 'https://github.com/sagarikallaje/currency-detector',
-      demo: '#',
       category: 'AI/ML Project',
-      filterCategory: 'ai',
       icon: Brain,
       color: 'from-orange-500 to-red-600',
-      complexity: 'Advanced',
       highlights: [
         'Computer vision and deep learning',
         'Custom dataset creation',
@@ -125,7 +106,6 @@ const Projects = () => {
     },
     {
       title: 'Medicine Recommender',
-      status: 'Completed',
       description: 'Built an end-to-end recommendation system leveraging Python, Pandas, and Scikit-learn for data processing and machine learning. Utilized Streamlit for rapid web application development and NLTK for natural language processing.',
       longDescription: 'A comprehensive recommendation system that helps users find appropriate medications based on symptoms and medical history. The system uses advanced NLP techniques and machine learning algorithms to provide accurate and personalized recommendations.',
       technologies: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit', 'NLTK', 'Pickle'],
@@ -138,12 +118,9 @@ const Projects = () => {
         'Data processing with Pandas'
       ],
       github: 'https://github.com/sagarikallaje/medicine-recommender',
-      demo: '#',
       category: 'Data Science',
-      filterCategory: 'ai',
       icon: Database,
       color: 'from-purple-500 to-pink-600',
-      complexity: 'Intermediate',
       highlights: [
         'Machine learning pipeline',
         'NLP and recommendation systems',
@@ -153,14 +130,11 @@ const Projects = () => {
     }
   ]
 
-  const filteredProjects = projects.filter(project => 
-    filter === 'all' || project.filterCategory === filter
-  )
 
   const ProjectCard = ({ project, index }: { project: any, index: number }) => (
     <motion.div
       variants={itemVariants}
-      className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group cursor-pointer"
+      className="bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group cursor-pointer"
       onClick={() => setSelectedProject(selectedProject === index ? null : index)}
       whileHover={{ y: -8, scale: 1.02 }}
     >
@@ -189,22 +163,13 @@ const Projects = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
         
-        {/* Status and Category Badges */}
-        <div className="absolute top-4 left-4 flex flex-col gap-2">
-          <span className={`px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r ${project.color} shadow-lg`}>
-            {project.status}
-          </span>
-          <span className="px-3 py-1 rounded-full text-xs font-medium text-white bg-black/60 backdrop-blur-sm">
-            {project.category}
-          </span>
-        </div>
 
         {/* View Details Button */}
         <div className="absolute bottom-4 right-4">
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="p-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-700 hover:text-primary-600 transition-colors duration-200"
+            className="p-2 bg-gray-700/90 backdrop-blur-sm rounded-full text-gray-300 hover:text-blue-400 transition-colors duration-200"
           >
             <Eye size={16} />
           </motion.button>
@@ -215,22 +180,16 @@ const Projects = () => {
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
-            <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors duration-200 mb-2">
+            <h3 className="text-xl font-bold text-gray-100 group-hover:text-blue-400 transition-colors duration-200 mb-2">
               {project.title}
             </h3>
-            <div className="flex items-center space-x-4 text-sm text-gray-500">
-              <div className="flex items-center space-x-1">
-                <Code size={14} />
-                <span>{project.complexity}</span>
-              </div>
-            </div>
           </div>
           <div className={`p-3 rounded-xl bg-gradient-to-r ${project.color} shadow-lg`}>
             <project.icon size={24} className="text-white" />
           </div>
         </div>
 
-        <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+        <p className="text-gray-300 mb-4 leading-relaxed line-clamp-3">
           {project.description}
         </p>
 
@@ -240,13 +199,13 @@ const Projects = () => {
             {project.highlights.slice(0, 2).map((highlight: string, idx: number) => (
               <span
                 key={idx}
-                className="px-2 py-1 bg-primary-50 text-primary-700 text-xs font-medium rounded-md"
+                className="px-2 py-1 bg-blue-900 text-blue-300 text-xs font-medium rounded-md"
               >
                 {highlight}
               </span>
             ))}
             {project.highlights.length > 2 && (
-              <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-md">
+              <span className="px-2 py-1 bg-gray-600 text-gray-300 text-xs font-medium rounded-md">
                 +{project.highlights.length - 2} more
               </span>
             )}
@@ -258,20 +217,20 @@ const Projects = () => {
           {project.technologies.slice(0, 4).map((tech: string) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full hover:bg-primary-100 hover:text-primary-700 transition-colors duration-200"
+              className="px-3 py-1 bg-gray-600 text-gray-300 text-xs font-medium rounded-full hover:bg-gray-500 hover:text-gray-200 transition-colors duration-200"
             >
               {tech}
             </span>
           ))}
           {project.technologies.length > 4 && (
-            <span className="px-3 py-1 bg-gray-200 text-gray-600 text-xs font-medium rounded-full">
+            <span className="px-3 py-1 bg-gray-500 text-gray-300 text-xs font-medium rounded-full">
               +{project.technologies.length - 4}
             </span>
           )}
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex space-x-3">
+        {/* GitHub Button */}
+        <div className="flex justify-center">
           <motion.a
             href={project.github}
             target="_blank"
@@ -279,23 +238,10 @@ const Projects = () => {
             onClick={(e) => e.stopPropagation()}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center space-x-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 text-sm font-medium flex-1 justify-center"
+            className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-gray-700 to-gray-800 text-white rounded-lg hover:from-gray-600 hover:to-gray-700 transition-all duration-200 font-medium"
           >
-            <Github size={16} />
-            <span>Code</span>
-          </motion.a>
-          
-          <motion.a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center space-x-2 px-4 py-2 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-600 hover:text-white transition-colors duration-200 text-sm font-medium flex-1 justify-center"
-          >
-            <ExternalLink size={16} />
-            <span>Demo</span>
+            <Github size={18} />
+            <span>View on GitHub</span>
           </motion.a>
         </div>
       </div>
@@ -316,14 +262,14 @@ const Projects = () => {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative bg-gradient-to-br from-primary-500 to-primary-700 h-32 rounded-t-2xl">
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-t-2xl"></div>
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 p-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-700 hover:text-primary-600 transition-colors duration-200"
+                className="absolute top-4 right-4 p-2 bg-gray-700/90 backdrop-blur-sm rounded-full text-gray-300 hover:text-blue-400 transition-colors duration-200"
               >
                 <X size={20} />
               </button>
@@ -332,29 +278,20 @@ const Projects = () => {
             <div className="p-8">
               <div className="flex items-start justify-between mb-6">
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-2">{project.title}</h2>
-                  <div className="flex items-center space-x-4 text-gray-600">
-                    <span className="flex items-center space-x-1">
-                      <Code size={16} />
-                      <span>{project.complexity}</span>
-                    </span>
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium text-white bg-gradient-to-r ${project.color}`}>
-                      {project.status}
-                    </span>
-                  </div>
+                  <h2 className="text-3xl font-bold text-gray-100 mb-2">{project.title}</h2>
                 </div>
               </div>
 
               <div className="prose prose-lg max-w-none mb-8">
-                <p className="text-gray-700 leading-relaxed">{project.longDescription}</p>
+                <p className="text-gray-300 leading-relaxed">{project.longDescription}</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Key Features</h3>
+                  <h3 className="text-xl font-bold text-gray-100 mb-4">Key Features</h3>
                   <ul className="space-y-2">
                     {project.features.map((feature: string, idx: number) => (
-                      <li key={idx} className="flex items-start space-x-2 text-gray-700">
+                      <li key={idx} className="flex items-start space-x-2 text-gray-300">
                         <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
                         <span>{feature}</span>
                       </li>
@@ -363,12 +300,12 @@ const Projects = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Technologies Used</h3>
+                  <h3 className="text-xl font-bold text-gray-100 mb-4">Technologies Used</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech: string) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-primary-100 text-primary-700 text-sm font-medium rounded-full"
+                        className="px-3 py-1 bg-blue-900 text-blue-300 text-sm font-medium rounded-full"
                       >
                         {tech}
                       </span>
@@ -377,29 +314,17 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className="flex space-x-4">
+              <div className="flex justify-center">
                 <motion.a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium"
+                  className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-gray-700 to-gray-800 text-white rounded-lg hover:from-gray-600 hover:to-gray-700 transition-all duration-200 font-medium"
                 >
                   <Github size={20} />
-                  <span>View Code</span>
-                </motion.a>
-                
-                <motion.a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 px-6 py-3 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-600 hover:text-white transition-colors duration-200 font-medium"
-                >
-                  <ExternalLink size={20} />
-                  <span>Live Demo</span>
+                  <span>View on GitHub</span>
                 </motion.a>
               </div>
             </div>
@@ -410,7 +335,7 @@ const Projects = () => {
   )
 
   return (
-    <section id="projects" className="section-padding bg-white">
+    <section id="projects" className="section-padding bg-gray-900">
       <div className="container-custom">
         <motion.div
           variants={containerVariants}
@@ -421,41 +346,16 @@ const Projects = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Featured <span className="text-gradient">Projects</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-100 mb-6">
+              <span className="text-gradient">Projects</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               A showcase of my major projects spanning web development, AI/ML, data science, and mobile applications. 
               Each project demonstrates different aspects of my technical skills and problem-solving approach.
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full mt-6"></div>
           </motion.div>
 
-          {/* Filter Tabs */}
-          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-12">
-            {filterCategories.map((category) => (
-              <motion.button
-                key={category.id}
-                onClick={() => setFilter(category.id)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center space-x-2 ${
-                  filter === category.id
-                    ? 'bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                <span>{category.label}</span>
-                <span className={`px-2 py-1 rounded-full text-xs ${
-                  filter === category.id
-                    ? 'bg-white/20 text-white'
-                    : 'bg-primary-100 text-primary-700'
-                }`}>
-                  {category.count}
-                </span>
-              </motion.button>
-            ))}
-          </motion.div>
 
           {/* Projects Grid */}
           <motion.div 
@@ -463,7 +363,7 @@ const Projects = () => {
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16"
           >
             <AnimatePresence mode="wait">
-              {filteredProjects.map((project, index) => (
+              {projects.map((project, index) => (
                 <ProjectCard key={project.title} project={project} index={index} />
               ))}
             </AnimatePresence>
@@ -472,7 +372,7 @@ const Projects = () => {
           {/* Project Modal */}
           {selectedProject !== null && (
             <ProjectModal
-              project={filteredProjects[selectedProject]}
+              project={projects[selectedProject]}
               isOpen={selectedProject !== null}
               onClose={() => setSelectedProject(null)}
             />
